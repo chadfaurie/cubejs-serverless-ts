@@ -1,0 +1,51 @@
+service: cube-ts-demo
+
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-plugin-typescript
+  - serverless-offline
+
+# serverless-webpack configuration
+# Enable auto-packing of external modules
+custom:
+  stage: ${opt:stage, 'dev'}
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+
+package:
+  include:
+    - src/schema/**
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: eu-west-1
+  stage: ${self:custom.stage}
+  memorySize: 1024 # Overwrite the default memory size. Default is 1024
+  timeout: 29 # 300 # optional, in seconds, default is 6.
+  tracing:
+    apiGateway: true
+    lambda: true
+  environment:
+    STAGE: ${self:custom.stage}
+
+functions:
+  http:
+    handler: src/handler.http
+    events:
+      - http:
+          path: /{proxy+}
+          method: any
+          authorizer: aws_iam
+          cors:
+            origin: "*"
+            headers: # <-- x-request-id passed by cubejs
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+              - x-request-id
+            allowCredentials: false
