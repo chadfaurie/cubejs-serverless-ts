@@ -9,3 +9,5 @@ jspm_packages
 
 .out
 .build
+
+.env

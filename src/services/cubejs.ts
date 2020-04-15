@@ -1,12 +1,5 @@
-import { Response, NextFunction } from "express";
-
 import CubeJsServerCore from "@cubejs-backend/server-core";
 import ElasticSearchDriver from "@cubejs-backend/elasticsearch-driver";
-
-import { Unauthorized } from "../utils/errors";
-import { IOrganization } from "../models/organization";
-
-import { ITimezorCubeJsRequest } from "../request";
 
 const { LOCAL, STAGE } = process.env;
 const isLocal = LOCAL === "Y";
@@ -16,6 +9,8 @@ export const cubejs = CubeJsServerCore.create({
   telemetry: false,
   schemaPath: "./src/schema/",
   dbType: "elasticsearch",
+
+  apiSecret: "RANDOM_CUBEJS_SECRET",
 
   driverFactory: () =>
     new ElasticSearchDriver({
