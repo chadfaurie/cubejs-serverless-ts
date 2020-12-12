@@ -865,7 +865,7 @@
     ramda "^0.27.0"
     redis "^3.0.2"
 
-"@cubejs-backend/schema-compiler@^0.19.1", "@cubejs-backend/schema-compiler@^0.19.7":
+"@cubejs-backend/schema-compiler@^0.19.1":
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/@cubejs-backend/schema-compiler/-/schema-compiler-0.19.1.tgz#462be2965aabf6e758705d945c62c9f20f88bbd9"
   integrity sha512-HEqXi3S0km6U1Fqpj4zRWCh6TlE+OeoPBhES6LN3p3PYOaCjQO9s17lgeb/0mtbJaBDLJiC7wZ4h+Oz/oLdAog==
@@ -4578,9 +4578,9 @@ inherits@2.0.3:
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
 
 ini@^1.3.4, ini@~1.3.0:
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
-  integrity sha512-RZY5huIKCMRWDUqZlEi72f/lmXKMvuszcMBduliQ3nnWbx9X/ZBQO7DijMEYS9EhHBb2qacRUMtC7svLwe0lcw==
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.8.tgz#a29da425b48806f34767a4efce397269af28432c"
+  integrity sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==
 
 inquirer@^6.0.0, inquirer@^6.5.2:
   version "6.5.2"
